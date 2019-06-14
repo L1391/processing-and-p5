@@ -1,0 +1,16 @@
+html, body {
+  padding: 0;
+  background: #654321;
+}
+
+img {
+ display: block; 
+  margin: auto;
+}
+
+canvas {
+  display: block;
+  width: 90%;
+  margin: auto;
+  border-radius: 20px;
+}
