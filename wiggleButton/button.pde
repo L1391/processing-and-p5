@@ -16,6 +16,9 @@ class button {
   int gK;
   int bK;
   
+  //size limits
+  float sizeMargin = 60;
+  
   boolean mouseDown;
   int index;
       
@@ -44,14 +47,14 @@ class button {
     //force arbitrarily proportional to stretch distance
     // -
     //dampening force arbitrarily proportional to dr
-    acceleration = (size-r)/500 - dr/30;
+    acceleration = (size-r)/200 - dr/20;
     
     dr += acceleration;
     //neglect small velocities
     if (Math.abs(dr) < 0.001) dr = 0;
     
     //r is changed by dr times an arbitrary constant
-    r += dr*10;  
+    r += dr*15;  
   }
  
   void update() {
@@ -70,6 +73,11 @@ class button {
     //let the user size the selected circle if the mouse is "clicked" 
     if (mouseDown && selectedIndex == index) {
        r = (float) Math.sqrt((mouseX-x)*(mouseX-x) + (mouseY-y)*(mouseY-y));
+       
+       //limit max and min size
+       if (r > size + sizeMargin) r = size + sizeMargin;
+       if (r < size - sizeMargin) r = size - sizeMargin;
+       
     //run physics if user let go
     } else {
       applyPhysics();
