@@ -9,5 +9,5 @@ A simple game concept using an expanding ring of force to push a ball in differe
 * Click anywhere to restart once dead
 
 ## Change Log
-**v2** : add UI
+**v2** : add UI  
 **v1** : initial version
