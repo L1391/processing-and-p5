@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en"><head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="p5.js"></script>
+    <script src="p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+
+    <div id='top-bar'>
+    <audio controls autoplay loop>
+      <source src="music.mp3" type="audio/mpeg">
+        Audio not supported
+    </audio>
+
+    <h1> Elevator Simulation </h1>
+
+    <label for="floors"> Number of Floors </label>
+    <input type="number" id="floors" min="2" max="10" value="6">
+
+    <label for="people"> Number of People </label>
+    <input type="number" id="people" min="2" max="10" value="3"> 
+  
+    <label for="elevatorCapacity"> Elevator Capacity </label>
+    <input type="number" id="elevatorCapacity" min="1" max="10" value="5">
+    <button onclick="updateParams()">Run</button> 
+    </div>
+    
+
+    <script src="main.js"></script>
+
+    <div id="canvasParent"></div>
+
+    <div id=results>
+    <div id='linearResults' class='result'></div>
+    <div id='majDirResults' class='result'></div>
+    <div id='seekPResults' class='result'></div>
+    </div>  
+  
+  <script>
+
+  </script>
+
+</body></html>
