@@ -95,7 +95,10 @@ class Button {
   isPressed() {
     var computerTest = mouseX < this.x + this.w / 2 && mouseX > this.x - this.w / 2 && mouseY < this.y + this.h / 2 && mouseY > this.y - this.h / 2;
     
-    var mobileTest = touches[0].x < this.x + this.w / 2 && touches[0].x > this.x - this.w / 2 && touches[0].y < this.y + this.h / 2 && touches[0].y > this.y - this.h / 2;
+    var mobileTest = false;
+    if (touches.length != 0) {
+     mobileTest = touches[0].x < this.x + this.w / 2 && touches[0].x > this.x - this.w / 2 && touches[0].y < this.y + this.h / 2 && touches[0].y > this.y - this.h / 2;
+    }
     
     return  (mobileTest || computerTest) && mouseIsPressed;  
   }
