@@ -90,10 +90,14 @@ class Button {
     fill(255);
     text(this.text, this.x - this.w / 4, this.y + 5);
   }
-
+  
   //is the mouse in the area of the rectangle and was the mouse pressed
   isPressed() {
-    return mouseX < this.x + this.w / 2 && mouseX > this.x - this.w / 2 && mouseY < this.y + this.h / 2 && mouseY > this.y - this.h / 2 && mouseIsPressed;
+    var computerTest = mouseX < this.x + this.w / 2 && mouseX > this.x - this.w / 2 && mouseY < this.y + this.h / 2 && mouseY > this.y - this.h / 2;
+    
+    var mobileTest = touches[0].x < this.x + this.w / 2 && touches[0].x > this.x - this.w / 2 && touches[0].y < this.y + this.h / 2 && touches[0].y > this.y - this.h / 2;
+    
+    return  (mobileTest || computerTest) && mouseIsPressed;  
   }
 }
 
